@@ -68,7 +68,7 @@ class TestSubject < MiniTest::Test
      result = @subject.findTopic 'topic 2'
      assert_nil result
 
-     result = @subject.findTopic('new topic').noLectures = 13 # merged @topic1 (6 lectures) with @topic2 (7 lectures)
+     result = @subject.findTopic('new topic').noLectures = 13 # merged @topic1 (6 lectures) with @topic2 (7 lectures) added together here
      assert result
      
    end
