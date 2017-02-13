@@ -55,6 +55,7 @@ class TestSubject < MiniTest::Test
 
    def test_merge_topics
      addSomeTopics
+     # Normal
      result = @subject.findTopic 'topic 1'
      assert result
      result = @subject.findTopic 'topic 2'
@@ -66,6 +67,9 @@ class TestSubject < MiniTest::Test
      assert_nil result
      result = @subject.findTopic 'topic 2'
      assert_nil result
+
+     result = @subject.findTopic('new topic').noLectures = 13 # merged @topic1 (6 lectures) with @topic2 (7 lectures)
+     assert result
      
    end
 
